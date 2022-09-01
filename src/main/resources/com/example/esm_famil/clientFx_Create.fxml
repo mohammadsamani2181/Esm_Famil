@@ -66,7 +66,7 @@
             </MFXCheckbox>
             <MFXTextField fx:id="createPagePlayerNameFld" layoutX="23.0" layoutY="217.0" minHeight="-Infinity" prefHeight="31.0" prefWidth="262.0" promptText="Your Name" style="-fx-background-color: #90a4ae;">
                <font>
-                  <Font name="System Italic" size="12.0" />
+                  <Font name="System Italic" size="13.0" />
                </font>
             </MFXTextField>
             <MFXButton fx:id="createPageCreateBtn" buttonType="RAISED" depthLevel="LEVEL5" layoutX="224.0" layoutY="339.0" prefHeight="34.0" prefWidth="168.0" rippleColor="#d9dbe5" style="-fx-background-color: #6200ea;" text="Create" textFill="WHITE">
@@ -81,10 +81,13 @@
             </MFXToggleButton>
             <MFXTextField fx:id="createPageGroupNameFld" floatingTextGap="0.0" graphicTextGap="0.0" layoutX="23.0" layoutY="271.0" minHeight="-Infinity" prefHeight="31.0" prefWidth="262.0" promptText="Group Name" style="-fx-background-color: #90a4ae;">
                <font>
-                  <Font name="System Bold Italic" size="12.0" />
+                  <Font name="System Italic" size="13.0" />
                </font>
             </MFXTextField>
-            <MFXPasswordField fx:id="createPagePasswordFld" layoutX="331.0" layoutY="217.0" minHeight="-Infinity" prefHeight="31.0" prefWidth="262.0" promptText="Game Password" style="-fx-background-color: #90a4ae;" />
+            <MFXPasswordField fx:id="createPagePasswordFld" layoutX="331.0" layoutY="217.0" minHeight="-Infinity" prefHeight="31.0" prefWidth="262.0" promptText="Game Password" style="-fx-background-color: #90a4ae;">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font></MFXPasswordField>
             <MFXLegacyComboBox fx:id="createPageNumberOfRound" layoutX="467.0" layoutY="275.0" prefHeight="23.0" prefWidth="130.0" promptText="Number Of Round" style="-fx-background-color: #90a4ae;" unfocusedLineColor="#8f8282" />
          </children>
          <effect>
