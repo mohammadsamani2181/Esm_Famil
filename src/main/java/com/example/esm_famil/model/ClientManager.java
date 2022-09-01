@@ -31,9 +31,27 @@ public class ClientManager implements Runnable {
                             new OutputStreamWriter(
                                     socket.getOutputStream())), true);
 
+
+
             while (true) {
                 String message = scan.nextLine();
 
+                if (message.equals("CREATE NEW GAME")) {
+                    String password = scan.nextLine();
+                    int gameId = server.createNewGame(password);
+
+                    writer.println("GAME ID");
+                    writer.println(gameId);
+                }
+
+                else if (message.equals("GAME FIELDS")) {
+                    int gameId = scan.nextInt();
+                    int size = scan.nextInt();
+
+                    for (int i = 0; i < size; i++) {
+                        server.addGameFields(gameId ,scan.nextLine());
+                    }
+                }
             }
 
 
