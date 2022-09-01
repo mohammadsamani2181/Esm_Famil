@@ -1,5 +1,7 @@
 package com.example.esm_famil;
 
+import com.example.esm_famil.model.Client;
+import com.example.esm_famil.model.Game;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
@@ -8,7 +10,19 @@ import io.github.palexdev.materialfx.controls.MFXToggleButton;
 import io.github.palexdev.materialfx.controls.legacy.MFXLegacyComboBox;
 import javafx.fxml.FXML;
 
+import java.util.ArrayList;
+
 public class ClientFx_CreateController {
+
+
+    private Client client;
+
+    private Game game;
+
+    private ArrayList<MFXCheckbox> checkboxes = new ArrayList<>();
+
+    private ArrayList<String> selectedCheckBoxesText = new ArrayList<>();
+
 
     @FXML
     private MFXCheckbox createPageFirstnameBox;
@@ -58,11 +72,90 @@ public class ClientFx_CreateController {
     @FXML
     private MFXLegacyComboBox<String> createPageNumberOfRound;
 
+
     @FXML
     void initialize() {
+        // setting items for comboBox
         createPageNumberOfRound.getItems().addAll("1", "2", "3", "4");
-        createPageNumberOfRound.getSelectionModel().select("1");
 
 
+        // connecting to the server
+        client = new Client(this);
+
+
+        // adding checkboxes to the array list
+        addToTheArrayList();
+
+
+        createPageCreateBtn.setOnAction(e -> {
+            checkingFields();
+        });
     }
+
+    private void addToTheArrayList() {
+        checkboxes.add(createPageFirstnameBox);
+        checkboxes.add(createPageLastnameBox);
+        checkboxes.add(createPageFoodBox);
+        checkboxes.add(createPageCityBox);
+        checkboxes.add(createPageAnimalBox);
+        checkboxes.add(createPageCountryBox);
+        checkboxes.add(createPageFruitBox);
+        checkboxes.add(createPageFlowerBox);
+        checkboxes.add(createPageCarBox);
+        checkboxes.add(createPageObjectBox);
+    }
+
+    private void checkingFields() {
+        int numberOfSelected = 0;
+
+        for (MFXCheckbox checkbox : checkboxes) {
+            if (checkbox.isSelected()) {
+                numberOfSelected++;
+                selectedCheckBoxesText.add(checkbox.getText());
+            }
+        }
+
+        if (numberOfSelected >= 5) {
+
+            if (!areFieldsEmpty()) {
+                createGame();
+
+            }else {
+                System.out.println("you must enter the information");
+            }
+
+
+        }else {
+            selectedCheckBoxesText.clear();
+            System.out.println("you must choose at least 5 checkBoxes");
+        }
+    }
+
+    private boolean areFieldsEmpty() {
+        if (!createPageGroupNameFld.getText().equals("") &&
+            !createPagePlayerNameFld.getText().equals("") &&
+            !createPagePasswordFld.getText().equals("") &&
+            createPageNumberOfRound.getValue() != null) {
+
+            return false;
+        }
+
+        return true;
+    }
+
+    private void createGame () {
+        game = new Game();
+        game.setPassword(createPagePasswordFld.getText());
+        int gameId = client.createGame(game.getPassword());
+        game.setId(gameId);
+
+        setGameFields();
+    }
+
+    private void setGameFields () {
+        game.addField(selectedCheckBoxesText);
+
+        client.sendingGameFields(selectedCheckBoxesText);
+    }
+
 }
