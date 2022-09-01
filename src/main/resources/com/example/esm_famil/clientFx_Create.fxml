@@ -2,87 +2,90 @@
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXCheckbox?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import io.github.palexdev.materialfx.controls.MFXToggleButton?>
+<?import io.github.palexdev.materialfx.controls.legacy.MFXLegacyComboBox?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #62757f;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esm_famil.ClientFx_CreateController">
+<AnchorPane minHeight="-Infinity" prefHeight="430.0" prefWidth="650.0" style="-fx-background-color: #62757f;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esm_famil.ClientFx_CreateController">
    <children>
       <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="373.0" prefWidth="573.0" style="-fx-background-color: #c1d5e0;" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
          <children>
-            <MFXCheckbox layoutX="16.0" layoutY="24.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" selected="true" text="Firstname">
+            <MFXCheckbox fx:id="createPageFirstnameBox" layoutX="16.0" layoutY="24.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" selected="true" text="Firstname">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </MFXCheckbox>
-            <MFXCheckbox layoutX="16.0" layoutY="97.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" selected="true" text="Food">
+            <MFXCheckbox fx:id="createPageFoodBox" layoutX="16.0" layoutY="95.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" selected="true" text="Food">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </MFXCheckbox>
-            <MFXCheckbox layoutX="171.0" layoutY="24.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" selected="true" text="Lastname">
+            <MFXCheckbox fx:id="createPageLastnameBox" layoutX="193.0" layoutY="24.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" selected="true" text="Lastname">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </MFXCheckbox>
-            <MFXCheckbox layoutX="171.0" layoutY="97.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" text="Object">
+            <MFXCheckbox fx:id="createPageObjectBox" layoutX="193.0" layoutY="95.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" text="Object">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </MFXCheckbox>
-            <MFXCheckbox layoutX="333.0" layoutY="24.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" selected="true" text="City">
+            <MFXCheckbox fx:id="createPageCityBox" layoutX="363.0" layoutY="24.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" selected="true" text="City">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </MFXCheckbox>
-            <MFXCheckbox layoutX="333.0" layoutY="97.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" text="Fruit">
+            <MFXCheckbox fx:id="createPageFruitBox" layoutX="363.0" layoutY="95.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" text="Fruit">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </MFXCheckbox>
-            <MFXCheckbox layoutX="484.0" layoutY="24.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" selected="true" text="Country">
+            <MFXCheckbox fx:id="createPageCountryBox" layoutX="504.0" layoutY="24.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" selected="true" text="Country">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </MFXCheckbox>
-            <MFXCheckbox layoutX="484.0" layoutY="97.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" text="Car">
+            <MFXCheckbox fx:id="createPageCarBox" layoutX="504.0" layoutY="95.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" text="Car">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </MFXCheckbox>
-            <MFXCheckbox layoutX="170.0" layoutY="168.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" text="Flower">
+            <MFXCheckbox fx:id="createPageFlowerBox" layoutX="193.0" layoutY="159.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" text="Flower">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </MFXCheckbox>
-            <MFXCheckbox layoutX="332.0" layoutY="168.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" text="Animal">
+            <MFXCheckbox fx:id="createPageAnimalBox" layoutX="363.0" layoutY="159.0" minHeight="-Infinity" prefHeight="19.0" prefWidth="42.0" text="Animal">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </MFXCheckbox>
-            <MFXTextField layoutX="14.0" layoutY="224.0" minHeight="-Infinity" prefHeight="31.0" prefWidth="262.0" promptText="Your Name" style="-fx-background-color: #90a4ae;">
+            <MFXTextField fx:id="createPagePlayerNameFld" layoutX="23.0" layoutY="217.0" minHeight="-Infinity" prefHeight="31.0" prefWidth="262.0" promptText="Your Name" style="-fx-background-color: #90a4ae;">
                <font>
                   <Font name="System Italic" size="12.0" />
                </font>
             </MFXTextField>
-            <MFXTextField floatingTextGap="0.0" graphicTextGap="0.0" layoutX="295.0" layoutY="224.0" minHeight="-Infinity" prefHeight="31.0" prefWidth="262.0" promptText="Game Password" style="-fx-background-color: #90a4ae;">
-               <font>
-                  <Font name="System Bold Italic" size="12.0" />
-               </font>
-            </MFXTextField>
-            <MFXButton buttonType="RAISED" depthLevel="LEVEL5" layoutX="203.0" layoutY="314.0" prefHeight="34.0" prefWidth="168.0" rippleColor="#d9dbe5" style="-fx-background-color: #6200ea;" text="Create" textFill="WHITE">
+            <MFXButton fx:id="createPageCreateBtn" buttonType="RAISED" depthLevel="LEVEL5" layoutX="224.0" layoutY="339.0" prefHeight="34.0" prefWidth="168.0" rippleColor="#d9dbe5" style="-fx-background-color: #6200ea;" text="Create" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </MFXButton>
-            <MFXToggleButton layoutX="222.0" layoutY="269.0" minHeight="-Infinity" prefHeight="34.0" prefWidth="110.0" selected="true" text="Time Base">
+            <MFXToggleButton fx:id="createPageType" layoutX="328.0" layoutY="270.0" minHeight="-Infinity" prefHeight="34.0" prefWidth="110.0" selected="true" text="Time Base">
                <font>
                   <Font name="System Italic" size="12.0" />
                </font>
             </MFXToggleButton>
+            <MFXTextField fx:id="createPageGroupNameFld" floatingTextGap="0.0" graphicTextGap="0.0" layoutX="23.0" layoutY="271.0" minHeight="-Infinity" prefHeight="31.0" prefWidth="262.0" promptText="Group Name" style="-fx-background-color: #90a4ae;">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </MFXTextField>
+            <MFXPasswordField fx:id="createPagePasswordFld" layoutX="331.0" layoutY="217.0" minHeight="-Infinity" prefHeight="31.0" prefWidth="262.0" promptText="Game Password" style="-fx-background-color: #90a4ae;" />
+            <MFXLegacyComboBox fx:id="createPageNumberOfRound" layoutX="467.0" layoutY="275.0" prefHeight="23.0" prefWidth="130.0" promptText="Number Of Round" style="-fx-background-color: #90a4ae;" unfocusedLineColor="#8f8282" />
          </children>
          <effect>
             <DropShadow />
