@@ -3,7 +3,7 @@ package com.example.esm_famil;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class ClientFxController {
+public class ClientFx_JoinController {
     @FXML
     private Label welcomeText;
 
