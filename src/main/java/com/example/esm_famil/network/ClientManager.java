@@ -1,4 +1,4 @@
-package com.example.esm_famil.model;
+package com.example.esm_famil.network;
 
 
 import java.io.*;
@@ -38,15 +38,21 @@ public class ClientManager implements Runnable {
 
                 if (message.equals("CREATE NEW GAME")) {
                     String password = scan.nextLine();
-                    int gameId = server.createNewGame(password);
+                    String hostName = scan.nextLine();
+                    String groupName = scan.nextLine();
+
+                    int gameId = server.createNewGame(password, hostName, groupName);
+                    server.addClientManager(gameId, this);
 
                     writer.println("GAME ID");
                     writer.println(gameId);
+
                 }
 
                 else if (message.equals("GAME FIELDS")) {
                     int gameId = scan.nextInt();
                     int size = scan.nextInt();
+                    scan.nextLine();
 
                     for (int i = 0; i < size; i++) {
                         server.addGameFields(gameId ,scan.nextLine());
