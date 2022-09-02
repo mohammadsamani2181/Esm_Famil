@@ -1,6 +1,6 @@
 package com.example.esm_famil;
 
-import com.example.esm_famil.model.Client;
+import com.example.esm_famil.network.Client;
 import com.example.esm_famil.model.Game;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;
@@ -18,6 +18,8 @@ public class ClientFx_CreateController {
     private Client client;
 
     private Game game;
+
+    private int gameId = -1;
 
     private ArrayList<MFXCheckbox> checkboxes = new ArrayList<>();
 
@@ -55,7 +57,7 @@ public class ClientFx_CreateController {
     private MFXCheckbox createPageAnimalBox;
 
     @FXML
-    private MFXTextField createPagePlayerNameFld;
+    private MFXTextField createPageHostNameFld;
 
     @FXML
     private MFXButton createPageCreateBtn;
@@ -133,7 +135,7 @@ public class ClientFx_CreateController {
 
     private boolean areFieldsEmpty() {
         if (!createPageGroupNameFld.getText().equals("") &&
-            !createPagePlayerNameFld.getText().equals("") &&
+            !createPageHostNameFld.getText().equals("") &&
             !createPagePasswordFld.getText().equals("") &&
             createPageNumberOfRound.getValue() != null) {
 
@@ -144,18 +146,34 @@ public class ClientFx_CreateController {
     }
 
     private void createGame () {
-        game = new Game();
-        game.setPassword(createPagePasswordFld.getText());
-        int gameId = client.createGame(game.getPassword());
-        game.setId(gameId);
+        client.createGame(createPagePasswordFld.getText(), createPageHostNameFld.getText(),
+                          createPageGroupNameFld.getText());
 
+        // waiting for server message
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+        String password = createPagePasswordFld.getText();
+        String hostName = createPageHostNameFld.getText();
+        String groupName = createPageGroupNameFld.getText();
+
+
+        game = new Game(gameId, password, hostName, groupName);
         setGameFields();
     }
 
     private void setGameFields () {
         game.addField(selectedCheckBoxesText);
 
-        client.sendingGameFields(selectedCheckBoxesText);
+        client.sendingGameFields(selectedCheckBoxesText, game.getId());
+    }
+
+    public void setGamId (int id) {
+        this.gameId = id;
     }
 
 }
