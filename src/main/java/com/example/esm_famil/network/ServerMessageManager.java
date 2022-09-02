@@ -1,4 +1,4 @@
-package com.example.esm_famil.model;
+package com.example.esm_famil.network;
 
 import com.example.esm_famil.ClientFx_CreateController;
 
@@ -8,13 +8,13 @@ import java.util.Scanner;
 public class ServerMessageManager implements Runnable{
     private BufferedReader reader;
     private Scanner scan;
-    private Client myClient;
+    private ClientFx_CreateController clientFx;
 
     public ServerMessageManager(BufferedReader reader,
-                                Client client) {
+                                ClientFx_CreateController clientFx) {
 
         scan = new Scanner(reader);
-        this.myClient = client;
+        this.clientFx = clientFx;
     }
 
     @Override
@@ -25,7 +25,8 @@ public class ServerMessageManager implements Runnable{
 
             if (message.equals("GAME ID")) {
                 int gameId = scan.nextInt();
-                myClient.setGameId(gameId);
+                clientFx.setGamId(gameId);
+
             }
 
         }
