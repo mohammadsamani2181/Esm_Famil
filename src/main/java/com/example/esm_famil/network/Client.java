@@ -1,11 +1,10 @@
-package com.example.esm_famil.model;
+package com.example.esm_famil.network;
 
 import com.example.esm_famil.ClientFx_CreateController;
 
 import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Client {
     private Socket socket;
@@ -14,7 +13,6 @@ public class Client {
     private BufferedReader reader;
     private PrintWriter writer;
     private ClientFx_CreateController clientFxCreateController;
-    private int gameId;
 
     public Client (ClientFx_CreateController clientFxCreateController) {
         this.clientFxCreateController = clientFxCreateController;
@@ -32,7 +30,7 @@ public class Client {
                             new OutputStreamWriter(
                                     socket.getOutputStream())), true);
 
-            Thread thread = new Thread(new ServerMessageManager(reader, this));
+            Thread thread = new Thread(new ServerMessageManager(reader, clientFxCreateController));
             thread.start();
 
         } catch (IOException e) {
@@ -41,24 +39,15 @@ public class Client {
     }
 
 
-    public void setGameId(int gameId) {
-        this.gameId = gameId;
-    }
 
-
-    public int createGame (String password) {
-        // debug
-        System.out.println("in client create game");
+    public void createGame (String password, String hostName, String groupName) {
         writer.println("CREATE NEW GAME");
         writer.println(password);
-
-        return gameId;
+        writer.println(hostName);
+        writer.println(groupName);
     }
 
-    public void sendingGameFields (ArrayList<String> texts) {
-        // debug
-        System.out.println("in client sending fields");
-
+    public void sendingGameFields (ArrayList<String> texts, int gameId) {
         writer.println("GAME FIELDS");
         writer.println(gameId);
         writer.println(texts.size());
