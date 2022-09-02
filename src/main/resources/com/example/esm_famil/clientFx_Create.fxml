@@ -64,7 +64,7 @@
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </MFXCheckbox>
-            <MFXTextField fx:id="createPagePlayerNameFld" layoutX="23.0" layoutY="217.0" minHeight="-Infinity" prefHeight="31.0" prefWidth="262.0" promptText="Your Name" style="-fx-background-color: #90a4ae;">
+            <MFXTextField fx:id="createPageHostNameFld" layoutX="23.0" layoutY="217.0" minHeight="-Infinity" prefHeight="31.0" prefWidth="262.0" promptText="Your Name" style="-fx-background-color: #90a4ae;">
                <font>
                   <Font name="System Italic" size="13.0" />
                </font>
