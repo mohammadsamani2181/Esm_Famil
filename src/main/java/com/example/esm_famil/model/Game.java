@@ -9,14 +9,19 @@ public class Game {
     private static int idNumber = 0;
     private int id;
     private String password;
+    private String hostName;
+    private String groupName;
     private ObservableList<String> fields = FXCollections.observableArrayList();
 
-    public Game(String password) {
+    public Game(String password, String hostName, String groupName) {
         id = idNumber++;
         this.password = password;
+        this.hostName = hostName;
+        this.groupName = groupName;
     }
 
-    public Game () {
+    public Game (int id, String password, String hostName, String groupName) {
+        this.id = id;
     }
 
     public int getId() {
@@ -35,6 +40,18 @@ public class Game {
         this.password = password;
     }
 
+    public String getHostName() {
+        return hostName;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public ObservableList<String> getFields() {
+        return fields;
+    }
+
     public void addField (String text) {
         fields.add(text);
     }
@@ -42,4 +59,5 @@ public class Game {
     public void addField (ArrayList<String> texts) {
         fields.addAll(texts);
     }
+
 }
