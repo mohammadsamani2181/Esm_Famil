@@ -20,7 +20,7 @@ public class Game {
         this.groupName = groupName;
     }
 
-    public Game (int id, String password, String hostName, String groupName) {
+    public Game (int id) {
         this.id = id;
     }
 
@@ -44,8 +44,16 @@ public class Game {
         return hostName;
     }
 
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
+
     public String getGroupName() {
         return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
     }
 
     public ObservableList<String> getFields() {
