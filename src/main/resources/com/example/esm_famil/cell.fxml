@@ -7,14 +7,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="135.0" prefWidth="446.0" style="-fx-background-color: #82b1ff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="8.0" layoutY="8.0" prefHeight="118.0" prefWidth="430.0" style="-fx-background-color: #4d82cb;">
          <children>
             <ImageView fitHeight="59.0" fitWidth="54.0" layoutX="9.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Downloads/icons8-game-60.png" />
+                  <Image url="@../../../assets/icons8-game-60.png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" layoutX="218.0" layoutY="97.0" prefHeight="18.0" prefWidth="208.0" text="date created">
