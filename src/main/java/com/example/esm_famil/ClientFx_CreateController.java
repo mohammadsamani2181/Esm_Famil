@@ -149,31 +149,24 @@ public class ClientFx_CreateController {
         client.createGame(createPagePasswordFld.getText(), createPageHostNameFld.getText(),
                           createPageGroupNameFld.getText());
 
-        // waiting for server message
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    }
 
-
+    public void setGameFields () {
         String password = createPagePasswordFld.getText();
         String hostName = createPageHostNameFld.getText();
         String groupName = createPageGroupNameFld.getText();
 
+        game.setPassword(password);
+        game.setHostName(hostName);
+        game.setGroupName(groupName);
 
-        game = new Game(gameId, password, hostName, groupName);
-        setGameFields();
-    }
-
-    private void setGameFields () {
         game.addField(selectedCheckBoxesText);
 
         client.sendingGameFields(selectedCheckBoxesText, game.getId());
     }
 
-    public void setGamId (int id) {
-        this.gameId = id;
+    public void setGame (Game game) {
+        this.game = game;
     }
 
 }
