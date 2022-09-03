@@ -1,6 +1,7 @@
 package com.example.esm_famil.network;
 
 import com.example.esm_famil.ClientFx_CreateController;
+import com.example.esm_famil.model.Game;
 
 import java.io.BufferedReader;
 import java.util.Scanner;
@@ -25,8 +26,10 @@ public class ServerMessageManager implements Runnable{
 
             if (message.equals("GAME ID")) {
                 int gameId = scan.nextInt();
-                clientFx.setGamId(gameId);
 
+                Game game = new Game(gameId);
+                clientFx.setGame(game);
+                clientFx.setGameFields();
             }
 
         }
