@@ -6,6 +6,7 @@ import com.example.esm_famil.model.Game;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,8 +41,11 @@ public class Server {
         }
     }
 
-    public int createNewGame (String password, String hostName, String groupName) {
+    public int createNewGame (String password, String hostName, String groupName, int numberOfRound) {
         Game newGame = new Game(password, hostName, groupName);
+        newGame.setDateCreated(new Timestamp(System.currentTimeMillis()));
+        newGame.setNumberOfRound(numberOfRound);
+
         dbHandler = new DBHandler();
         games.add(newGame);
         dbHandler.createNewGame(newGame);
