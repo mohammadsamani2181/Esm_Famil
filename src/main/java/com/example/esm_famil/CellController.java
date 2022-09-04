@@ -4,6 +4,7 @@ import com.example.esm_famil.model.Game;
 import com.example.esm_famil.network.Client;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.animation.PauseTransition;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -96,8 +97,8 @@ public class CellController extends ListCell<Game> {
             if (!playerName.equals("") && !password.equals("")) {
 
                 if (password.equals(gamePassword)) {
-                    client = new Client();
-
+                    client = new Client(this);
+                    client.joinGame(getItem().getId());
                 }else {
                     errorLbl.setText("Game Password is incorrect.");
                     makeInvisible(errorLbl);
@@ -144,6 +145,11 @@ public class CellController extends ListCell<Game> {
                 event -> label.setText("")
         );
         visiblePause3.play();
+    }
+
+    public void setGameFields (ObservableList<String> fields) {
+        getItem().addField(fields);
+        System.out.println(getItem().getFields());
     }
 
 }
