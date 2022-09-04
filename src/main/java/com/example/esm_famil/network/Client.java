@@ -1,6 +1,8 @@
 package com.example.esm_famil.network;
 
+import com.example.esm_famil.CellController;
 import com.example.esm_famil.ClientFx_CreateController;
+import javafx.collections.ObservableList;
 
 import java.io.*;
 import java.net.Socket;
@@ -13,6 +15,7 @@ public class Client {
     private BufferedReader reader;
     private PrintWriter writer;
     private ClientFx_CreateController clientFxCreateController;
+    private CellController cellController;
 
     public Client (ClientFx_CreateController clientFxCreateController) {
         this.clientFxCreateController = clientFxCreateController;
@@ -30,7 +33,7 @@ public class Client {
                             new OutputStreamWriter(
                                     socket.getOutputStream())), true);
 
-            Thread thread = new Thread(new ServerMessageManager(reader, clientFxCreateController));
+            Thread thread = new Thread(new ServerMessageManagerCreatingGame(reader, clientFxCreateController));
             thread.start();
 
         } catch (IOException e) {
@@ -39,8 +42,8 @@ public class Client {
     }
 
 
-    public Client () {
-
+    public Client (CellController cellController) {
+        this.cellController = cellController;
         try {
             socket = new Socket(serverAddress, port);
 
@@ -54,7 +57,7 @@ public class Client {
                             new OutputStreamWriter(
                                     socket.getOutputStream())), true);
 
-            Thread thread = new Thread(new ServerMessageManager(reader, clientFxCreateController));
+            Thread thread = new Thread(new ServerMessageManagerJoiningGame(reader, cellController));
             thread.start();
 
         } catch (IOException e) {
@@ -72,7 +75,7 @@ public class Client {
         writer.println(numberOfRound);
     }
 
-    public void sendingGameFields (ArrayList<String> texts, int gameId) {
+    public void sendGameFields(ObservableList<String> texts, int gameId) {
         writer.println("GAME FIELDS");
         writer.println(gameId);
         writer.println(texts.size());
@@ -80,5 +83,10 @@ public class Client {
         for (int i = 0; i < texts.size(); i++) {
             writer.println(texts.get(i));
         }
+    }
+
+    public void joinGame(int gameId) {
+        writer.println("JOIN GAME");
+        writer.println(gameId);
     }
 }
