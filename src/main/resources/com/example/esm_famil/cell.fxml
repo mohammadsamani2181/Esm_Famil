@@ -37,7 +37,7 @@
                   <Font size="11.0" />
                </font>
             </Label>
-            <MFXButton fx:id="cellJoinButton" buttonType="RAISED" depthLevel="LEVEL5" layoutX="337.0" layoutY="80.0" prefHeight="32.0" prefWidth="97.0" rippleColor="#2618c9" style="-fx-background-color: #6200ea;" text="Join" textFill="#f8f8f8">
+            <MFXButton fx:id="cellJoinBtn" buttonType="RAISED" depthLevel="LEVEL5" layoutX="337.0" layoutY="80.0" prefHeight="32.0" prefWidth="97.0" rippleColor="#2618c9" style="-fx-background-color: #6200ea;" text="Join" textFill="#f8f8f8">
                <font>
                   <Font name="System Bold Italic" size="14.0" />
                </font>
