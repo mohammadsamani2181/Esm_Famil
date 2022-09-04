@@ -11,4 +11,5 @@ public class Const {
     public static final String GAMES_GROUPNAME = "groupname";
     public static final String GAMES_PASSWORD = "password";
     public static final String GAMES_DATECREATED = "datecreated";
+    public static final String GAMES_NUMBEROFROUND = "numberofround";
 }
