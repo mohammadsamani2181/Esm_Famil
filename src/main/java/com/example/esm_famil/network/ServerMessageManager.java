@@ -18,6 +18,11 @@ public class ServerMessageManager implements Runnable{
         this.clientFx = clientFx;
     }
 
+    public ServerMessageManager(BufferedReader reader) {
+
+        scan = new Scanner(reader);
+    }
+
     @Override
     public void run() {
 
