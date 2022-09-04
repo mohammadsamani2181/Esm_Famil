@@ -1,6 +1,8 @@
 package com.example.esm_famil.network;
 
 
+import javafx.collections.ObservableList;
+
 import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
@@ -57,6 +59,19 @@ public class ClientManager implements Runnable {
 
                     for (int i = 0; i < size; i++) {
                         server.addGameFields(gameId ,scan.nextLine());
+                    }
+                }
+
+                else if (message.equals("JOIN GAME")) {
+                    int gameId = scan.nextInt();
+                    server.addClientManager(gameId, this);
+                    ObservableList<String> fields = server.getGameFields(gameId);
+
+                    writer.println("GAME FIELDS");
+                    writer.println(fields.size());
+
+                    for (String field : fields) {
+                        writer.println(field);
                     }
                 }
             }
