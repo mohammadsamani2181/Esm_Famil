@@ -40,8 +40,9 @@ public class ClientManager implements Runnable {
                     String password = scan.nextLine();
                     String hostName = scan.nextLine();
                     String groupName = scan.nextLine();
+                    int numberOfRound = Integer.parseInt(scan.nextLine());
 
-                    int gameId = server.createNewGame(password, hostName, groupName);
+                    int gameId = server.createNewGame(password, hostName, groupName, numberOfRound);
                     server.addClientManager(gameId, this);
 
                     writer.println("GAME ID");
