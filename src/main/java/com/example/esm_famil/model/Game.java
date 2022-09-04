@@ -3,6 +3,7 @@ package com.example.esm_famil.model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 public class Game {
@@ -11,6 +12,8 @@ public class Game {
     private String password;
     private String hostName;
     private String groupName;
+    private Timestamp dateCreated;
+    private int numberOfRound;
     private ObservableList<String> fields = FXCollections.observableArrayList();
 
     public Game(String password, String hostName, String groupName) {
@@ -22,6 +25,10 @@ public class Game {
 
     public Game (int id) {
         this.id = id;
+    }
+
+    public Game () {
+
     }
 
     public int getId() {
@@ -58,6 +65,22 @@ public class Game {
 
     public ObservableList<String> getFields() {
         return fields;
+    }
+
+    public Timestamp getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(Timestamp dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+    public int getNumberOfRound() {
+        return numberOfRound;
+    }
+
+    public void setNumberOfRound(int numberOfRound) {
+        this.numberOfRound = numberOfRound;
     }
 
     public void addField (String text) {
