@@ -8,6 +8,8 @@ import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import io.github.palexdev.materialfx.controls.MFXToggleButton;
 import io.github.palexdev.materialfx.controls.legacy.MFXLegacyComboBox;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 
 import java.util.ArrayList;
@@ -23,7 +25,7 @@ public class ClientFx_CreateController {
 
     private ArrayList<MFXCheckbox> checkboxes = new ArrayList<>();
 
-    private ArrayList<String> selectedCheckBoxesText = new ArrayList<>();
+    private ObservableList<String> selectedCheckBoxesText = FXCollections.observableArrayList();
 
 
     @FXML
@@ -151,7 +153,7 @@ public class ClientFx_CreateController {
 
     }
 
-    public void setGameFields () {
+    private void setGameFields () {
         String password = createPagePasswordFld.getText();
         String hostName = createPageHostNameFld.getText();
         String groupName = createPageGroupNameFld.getText();
@@ -162,11 +164,12 @@ public class ClientFx_CreateController {
 
         game.addField(selectedCheckBoxesText);
 
-        client.sendingGameFields(selectedCheckBoxesText, game.getId());
+        client.sendGameFields(selectedCheckBoxesText, game.getId());
     }
 
     public void setGame (Game game) {
         this.game = game;
+        setGameFields();
     }
 
 }
