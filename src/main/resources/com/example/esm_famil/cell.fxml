@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -7,33 +8,48 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="135.0" prefWidth="446.0" style="-fx-background-color: #82b1ff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="cellPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="135.0" prefWidth="459.0" style="-fx-background-color: #82b1ff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutX="8.0" layoutY="8.0" prefHeight="118.0" prefWidth="430.0" style="-fx-background-color: #4d82cb;">
+      <AnchorPane layoutX="8.0" layoutY="8.0" prefHeight="118.0" prefWidth="442.0" style="-fx-background-color: #4d82cb;">
          <children>
-            <ImageView fitHeight="59.0" fitWidth="54.0" layoutX="9.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="59.0" fitWidth="54.0" layoutX="11.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../assets/icons8-game-60.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="218.0" layoutY="97.0" prefHeight="18.0" prefWidth="208.0" text="date created">
+            <Label fx:id="cellDateCreated" layoutY="96.0" prefHeight="18.0" prefWidth="208.0" text="date created" textFill="#7f0707">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="131.0" layoutY="3.0" prefHeight="26.0" prefWidth="171.0" text="group name" textFill="#eaff00">
+            <Label fx:id="cellGroupName" alignment="CENTER" layoutX="131.0" layoutY="3.0" prefHeight="26.0" prefWidth="171.0" text="group name" textFill="#eaff00">
                <font>
                   <Font name="System Italic" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="84.0" layoutY="39.0" prefHeight="27.0" prefWidth="252.0" text="Host name" textFill="#d5d5d5">
+            <Label fx:id="cellHostName" layoutX="151.0" layoutY="36.0" prefHeight="27.0" prefWidth="252.0" text="Host name" textFill="#d5d5d5">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="65.0" layoutY="69.0" prefHeight="18.0" prefWidth="115.0" text="Number of round" textFill="#8f252a">
+            <Label fx:id="cellNumberOfRound" layoutX="206.0" layoutY="66.0" prefHeight="18.0" prefWidth="115.0" text="Number of round" textFill="#8f252a">
                <font>
                   <Font size="11.0" />
+               </font>
+            </Label>
+            <MFXButton fx:id="cellJoinButton" buttonType="RAISED" depthLevel="LEVEL5" layoutX="337.0" layoutY="80.0" prefHeight="32.0" prefWidth="97.0" rippleColor="#2618c9" style="-fx-background-color: #6200ea;" text="Join" textFill="#f8f8f8">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </MFXButton>
+            <Label layoutX="73.0" layoutY="41.0" prefHeight="19.0" prefWidth="74.0" text="Host Name :">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="91.0" layoutY="65.0" prefHeight="19.0" prefWidth="109.0" text="Number Of Round :">
+               <font>
+                  <Font name="System Italic" size="13.0" />
                </font>
             </Label>
          </children>
