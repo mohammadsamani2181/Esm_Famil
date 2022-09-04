@@ -8,10 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="450.0" style="-fx-background-color: #b6e3ff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="480.0" style="-fx-background-color: #b6e3ff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esm_famil.ClientFx_JoinController">
    <children>
-      <AnchorPane layoutY="-1.0" prefHeight="86.0" prefWidth="450.0" style="-fx-background-color: #4d82cb;">
+      <AnchorPane layoutY="1.0" prefHeight="86.0" prefWidth="480.0" style="-fx-background-color: #4d82cb;">
          <children>
             <Label alignment="CENTER" layoutX="145.0" layoutY="24.0" prefHeight="38.0" prefWidth="159.0" text="Esm &amp; Famil">
                <font>
@@ -26,12 +25,12 @@
             <DropShadow height="54.36" radius="19.5325" width="25.77" />
          </effect>
       </AnchorPane>
-      <MFXLegacyListView layoutX="-1.0" layoutY="97.0" prefHeight="343.0" prefWidth="450.0" style="-fx-background-color: #b6e3ff;">
+      <MFXLegacyListView fx:id="joinPageListView" layoutX="-1.0" layoutY="97.0" prefHeight="343.0" prefWidth="480.0" style="-fx-background-color: #b6e3ff;">
          <effect>
             <DropShadow />
          </effect>
       </MFXLegacyListView>
-      <MFXButton buttonType="RAISED" depthLevel="LEVEL5" layoutX="4.0" layoutY="447.0" prefHeight="48.0" prefWidth="443.0" style="-fx-background-color: #2962ff;" text="Create New Game" textFill="WHITE">
+      <MFXButton fx:id="joinPageCreateNewGameBtn" buttonType="RAISED" depthLevel="LEVEL5" layoutX="4.0" layoutY="447.0" prefHeight="48.0" prefWidth="471.0" style="-fx-background-color: #2962ff;" text="Create New Game" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="17.0" />
          </font>
