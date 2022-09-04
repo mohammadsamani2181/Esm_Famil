@@ -83,7 +83,7 @@ public class Game {
         fields.add(text);
     }
 
-    public void addField (ArrayList<String> texts) {
+    public void addField (ObservableList<String> texts) {
         fields.addAll(texts);
     }
 
