@@ -45,17 +45,19 @@ public class ClientFx_JoinController {
 
         try {
             while (resultSet.next()) {
-                Game game = new Game();
-
+                int id = resultSet.getInt(Const.GAMES_ID);
                 String hostname = resultSet.getString(Const.GAMES_HOSTNAME);
                 String groupName = resultSet.getString(Const.GAMES_GROUPNAME);
                 Timestamp dateCreated = resultSet.getTimestamp(Const.GAMES_DATECREATED);
                 int numberOfRound = resultSet.getInt(Const.GAMES_NUMBEROFROUND);
+                String password = resultSet.getString(Const.GAMES_PASSWORD);
 
+                Game game = new Game(id);
                 game.setHostName(hostname);
                 game.setGroupName(groupName);
                 game.setDateCreated(dateCreated);
                 game.setNumberOfRound(numberOfRound);
+                game.setPassword(password);
 
                 games.add(game);
             }
