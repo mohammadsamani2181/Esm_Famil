@@ -2,6 +2,7 @@ package com.example.esm_famil.network;
 
 import com.example.esm_famil.database.DBHandler;
 import com.example.esm_famil.model.Game;
+import javafx.collections.ObservableList;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -59,5 +60,9 @@ public class Server {
 
     public void addGameFields(int gameId, String text) {
         games.get(gameId).addField(text);
+    }
+
+    public ObservableList<String> getGameFields (int gameId) {
+        return games.get(gameId).getFields();
     }
 }
