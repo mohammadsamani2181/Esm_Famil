@@ -40,11 +40,12 @@ public class Client {
 
 
 
-    public void createGame (String password, String hostName, String groupName) {
+    public void createGame (String password, String hostName, String groupName, String numberOfRound) {
         writer.println("CREATE NEW GAME");
         writer.println(password);
         writer.println(hostName);
         writer.println(groupName);
+        writer.println(numberOfRound);
     }
 
     public void sendingGameFields (ArrayList<String> texts, int gameId) {
