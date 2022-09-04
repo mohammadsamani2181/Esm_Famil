@@ -147,7 +147,7 @@ public class ClientFx_CreateController {
 
     private void createGame () {
         client.createGame(createPagePasswordFld.getText(), createPageHostNameFld.getText(),
-                          createPageGroupNameFld.getText());
+                          createPageGroupNameFld.getText(), createPageNumberOfRound.getValue());
 
     }
 
