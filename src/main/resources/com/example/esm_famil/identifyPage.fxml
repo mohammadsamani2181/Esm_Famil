@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="253.0" prefWidth="481.0" style="-fx-background-color: #cfd8dc;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esm_famil.IdentifyPageController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="32.0" prefHeight="210.0" prefWidth="460.0" style="-fx-background-color: #9ea7aa;">
+         <children>
+            <MFXTextField fx:id="identifyPagePlayerNameFld" layoutX="65.0" layoutY="40.0" minHeight="-Infinity" prefHeight="39.0" prefWidth="368.0" promptText="Your Name" style="-fx-background-color: #757575;">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </MFXTextField>
+            <MFXPasswordField fx:id="identifyPageGamePasswordFld" layoutX="65.0" layoutY="104.0" minHeight="-Infinity" prefHeight="39.0" prefWidth="368.0" promptText="Game Password" style="-fx-background-color: #757575;">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </MFXPasswordField>
+            <MFXButton fx:id="identifyPageOkBtn" buttonType="RAISED" depthLevel="LEVEL5" layoutX="317.0" layoutY="164.0" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #000000;" text="Ok" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </MFXButton>
+            <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="17.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/icons8-user-48.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="18.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/icons8-security-shield-green-30.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="identifyPageErrorLbl" alignment="CENTER_RIGHT" layoutX="16.0" layoutY="166.0" prefHeight="32.0" prefWidth="294.0" textFill="#bf0c12">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" prefHeight="32.0" prefWidth="481.0" style="-fx-background-color: #000000;" text="Identify Page" textFill="#c5a4a4">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
