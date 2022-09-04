@@ -6,22 +6,18 @@ import com.example.esm_famil.model.Game;
 import java.io.BufferedReader;
 import java.util.Scanner;
 
-public class ServerMessageManager implements Runnable{
-    private BufferedReader reader;
+public class ServerMessageManagerCreatingGame implements Runnable{
     private Scanner scan;
     private ClientFx_CreateController clientFx;
 
-    public ServerMessageManager(BufferedReader reader,
-                                ClientFx_CreateController clientFx) {
+
+    public ServerMessageManagerCreatingGame(BufferedReader reader,
+                                            ClientFx_CreateController clientFx) {
 
         scan = new Scanner(reader);
         this.clientFx = clientFx;
     }
 
-    public ServerMessageManager(BufferedReader reader) {
-
-        scan = new Scanner(reader);
-    }
 
     @Override
     public void run() {
@@ -34,7 +30,6 @@ public class ServerMessageManager implements Runnable{
 
                 Game game = new Game(gameId);
                 clientFx.setGame(game);
-                clientFx.setGameFields();
             }
 
         }
