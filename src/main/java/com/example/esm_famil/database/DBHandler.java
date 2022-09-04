@@ -26,8 +26,8 @@ public class DBHandler extends Configs{
                 "(" +
                 Const.GAMES_ID + ", " + Const.GAMES_HOSTNAME + ", " +
                 Const.GAMES_GROUPNAME + ", " + Const.GAMES_PASSWORD + ", " +
-                Const.GAMES_DATECREATED +
-                ")" + "VALUES(?, ?, ?, ?, ?)";
+                Const.GAMES_DATECREATED + ", " + Const.GAMES_NUMBEROFROUND +
+                ")" + "VALUES(?, ?, ?, ?, ?, ?)";
 
         PreparedStatement preparedStatement = null;
         try {
@@ -37,7 +37,8 @@ public class DBHandler extends Configs{
             preparedStatement.setString(2, game.getHostName());
             preparedStatement.setString(3, game.getGroupName());
             preparedStatement.setString(4, game.getPassword());
-            preparedStatement.setTimestamp(5, new Timestamp(System.currentTimeMillis()));
+            preparedStatement.setTimestamp(5, game.getDateCreated());
+            preparedStatement.setInt(6, game.getNumberOfRound());
 
             preparedStatement.executeUpdate();
 
@@ -46,5 +47,23 @@ public class DBHandler extends Configs{
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public ResultSet getGames() {
+        String query = "SELECT * FROM " + Const.GAMES_TABLE;
+
+        ResultSet resultSet = null;
+
+        try {
+            PreparedStatement preparedStatement = getDbConnection().prepareStatement(query);
+
+            resultSet = preparedStatement.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return resultSet;
     }
 }
