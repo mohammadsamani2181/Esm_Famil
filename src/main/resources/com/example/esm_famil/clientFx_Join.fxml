@@ -5,14 +5,16 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="480.0" style="-fx-background-color: #b6e3ff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esm_famil.ClientFx_JoinController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="480.0" style="-fx-background-color: #b6e3ff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esm_famil.ClientFx_JoinController">
    <children>
       <AnchorPane layoutY="1.0" prefHeight="86.0" prefWidth="480.0" style="-fx-background-color: #4d82cb;">
          <children>
-            <Label alignment="CENTER" layoutX="145.0" layoutY="24.0" prefHeight="38.0" prefWidth="159.0" text="Esm &amp; Famil">
+            <Label alignment="CENTER" layoutX="160.0" layoutY="24.0" prefHeight="38.0" prefWidth="159.0" text="Esm &amp; Famil">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
@@ -20,6 +22,11 @@
                   <Glow level="0.46" />
                </effect>
             </Label>
+            <ImageView fx:id="joinPageRefreshBtn" fitHeight="38.0" fitWidth="32.0" layoutX="445.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/icons8-refresh-64.png" />
+               </image>
+            </ImageView>
          </children>
          <effect>
             <DropShadow height="54.36" radius="19.5325" width="25.77" />
