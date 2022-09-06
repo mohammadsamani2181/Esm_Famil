@@ -12,6 +12,7 @@ public class ClientManager implements Runnable {
     private Socket socket;
     private BufferedReader reader;
     private PrintWriter writer;
+    private String name;
 
 
     public ClientManager(Server server, Socket socket) {
@@ -45,7 +46,7 @@ public class ClientManager implements Runnable {
                     int numberOfRound = Integer.parseInt(scan.nextLine());
 
                     int gameId = server.createNewGame(password, hostName, groupName, numberOfRound);
-                    server.addClientManager(gameId, this);
+                    server.addClientManagerAsHost(gameId, this);
 
                     writer.println("GAME ID");
                     writer.println(gameId);
@@ -64,7 +65,10 @@ public class ClientManager implements Runnable {
 
                 else if (message.equals("JOIN GAME")) {
                     int gameId = scan.nextInt();
-                    server.addClientManager(gameId, this);
+                    scan.nextLine();
+                    this.name = scan.nextLine();
+
+                    server.addClientManagerAsGuest(gameId, this);
                     ObservableList<String> fields = server.getGameFields(gameId);
 
                     writer.println("GAME FIELDS");
@@ -81,5 +85,10 @@ public class ClientManager implements Runnable {
             e.printStackTrace();
         }
 
+    }
+
+    public void playerJoined (ClientManager clientManager) {
+        writer.println("PLAYER JOINED");
+        writer.println(clientManager.name);
     }
 }
