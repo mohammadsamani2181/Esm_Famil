@@ -8,10 +8,16 @@ import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import io.github.palexdev.materialfx.controls.MFXToggleButton;
 import io.github.palexdev.materialfx.controls.legacy.MFXLegacyComboBox;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ClientFx_CreateController {
@@ -20,8 +26,6 @@ public class ClientFx_CreateController {
     private Client client;
 
     private Game game;
-
-    private int gameId = -1;
 
     private ArrayList<MFXCheckbox> checkboxes = new ArrayList<>();
 
@@ -153,7 +157,7 @@ public class ClientFx_CreateController {
 
     }
 
-    private void setGameFields () {
+    private void setGameFieldsAndShowWaitingPage() {
         String password = createPagePasswordFld.getText();
         String hostName = createPageHostNameFld.getText();
         String groupName = createPageGroupNameFld.getText();
@@ -165,11 +169,37 @@ public class ClientFx_CreateController {
         game.addField(selectedCheckBoxesText);
 
         client.sendGameFields(selectedCheckBoxesText, game.getId());
+
+        // show the waiting host page
+        showWaitingHostPage();
     }
 
     public void setGame (Game game) {
         this.game = game;
-        setGameFields();
+        setGameFieldsAndShowWaitingPage();
+    }
+
+    private void showWaitingHostPage() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("waitingHostPage.fxml"));
+
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        WaitingHostPageController waitingHostPageController = loader.getController();
+        waitingHostPageController.setClient(client);
+        waitingHostPageController.setGame(game);
+
+
+        Platform.runLater(() -> {
+            createPageCreateBtn.getScene().getWindow().hide();
+            Stage stage = new Stage();
+            Parent root = loader.getRoot();
+            stage.setScene(new Scene(root));
+            stage.show();
+        });
     }
 
 }
