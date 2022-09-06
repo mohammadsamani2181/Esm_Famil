@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.legacy.MFXLegacyListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="403.0" prefWidth="392.0" style="-fx-background-color: #4d82cb;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esm_famil.WaitingHostPageController">
+   <children>
+      <AnchorPane layoutX="22.0" layoutY="20.0" prefHeight="364.0" prefWidth="347.0" style="-fx-background-color: #b6e3ff;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <MFXLegacyListView fx:id="waitingHostPageListView" layoutX="22.0" layoutY="85.0" prefHeight="146.0" prefWidth="303.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </MFXLegacyListView>
+            <Label layoutX="9.0" layoutY="26.0" prefHeight="33.0" prefWidth="238.0" text="Players Joined :" textFill="#8c0b0b">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </Label>
+            <MFXButton fx:id="waitingHostPageStartBtn" buttonType="RAISED" depthLevel="LEVEL5" layoutX="64.0" layoutY="279.0" prefHeight="42.0" prefWidth="220.0" rippleColor="#2709cf" style="-fx-background-color: #2962ff;" text="Start" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </MFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>
