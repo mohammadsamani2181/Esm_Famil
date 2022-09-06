@@ -44,18 +44,24 @@ public class Server {
 
     public int createNewGame (String password, String hostName, String groupName, int numberOfRound) {
         Game newGame = new Game(password, hostName, groupName);
+        dbHandler = new DBHandler();
+
         newGame.setDateCreated(new Timestamp(System.currentTimeMillis()));
         newGame.setNumberOfRound(numberOfRound);
 
-        dbHandler = new DBHandler();
         games.add(newGame);
         dbHandler.createNewGame(newGame);
 
         return newGame.getId();
     }
 
-    public void addClientManager (int gameId, ClientManager clientManager) {
+    public void addClientManagerAsHost(int gameId, ClientManager clientManager) {
         clientManagers.get(gameId).add(clientManager);
+    }
+
+    public void addClientManagerAsGuest(int gameId, ClientManager clientManager) {
+        clientManagers.get(gameId).add(clientManager);
+        clientManagers.get(gameId).get(0).playerJoined(clientManager);
     }
 
     public void addGameFields(int gameId, String text) {
