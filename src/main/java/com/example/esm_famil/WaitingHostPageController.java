@@ -2,6 +2,7 @@ package com.example.esm_famil;
 
 import com.example.esm_famil.model.Game;
 import com.example.esm_famil.network.Client;
+import com.example.esm_famil.network.ServerMessageManagerCreatingGame;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.legacy.MFXLegacyListView;
 import javafx.collections.FXCollections;
@@ -14,6 +15,8 @@ public class WaitingHostPageController {
 
     private Game game;
 
+    private ServerMessageManagerCreatingGame messageManager;
+
     private ObservableList<String> playerList = FXCollections.observableArrayList();
 
     @FXML
@@ -24,7 +27,11 @@ public class WaitingHostPageController {
 
     @FXML
     void initialize() {
+        waitingHostPageListView.setItems(playerList);
+    }
 
+    public void setMessageManager(ServerMessageManagerCreatingGame messageManager) {
+        this.messageManager = messageManager;
     }
 
     public void setClient(Client client) {
@@ -33,5 +40,9 @@ public class WaitingHostPageController {
 
     public void setGame(Game game) {
         this.game = game;
+    }
+
+    public void addNewPlayerName (String playerName) {
+        playerList.add(playerName);
     }
 }
