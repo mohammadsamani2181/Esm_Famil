@@ -78,6 +78,7 @@ public class CellController extends ListCell<Game> {
     }
 
     private void showAndControlIdentifyPage(String gamePassword) {
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("identifyPage.fxml"));
 
         try {
@@ -98,7 +99,9 @@ public class CellController extends ListCell<Game> {
 
                 if (password.equals(gamePassword)) {
                     client = new Client(this);
-                    client.joinGame(getItem().getId());
+                    client.joinGame(getItem().getId(), playerName);
+
+                    showWaitingGuestPage();
                 }else {
                     errorLbl.setText("Game Password is incorrect.");
                     makeInvisible(errorLbl);
@@ -150,6 +153,21 @@ public class CellController extends ListCell<Game> {
     public void setGameFields (ObservableList<String> fields) {
         getItem().addField(fields);
         System.out.println(getItem().getFields());
+    }
+
+    private void showWaitingGuestPage() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("waitingGuestPage.fxml"));
+
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Stage stage = new Stage();
+        Parent root = loader.getRoot();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
 }
