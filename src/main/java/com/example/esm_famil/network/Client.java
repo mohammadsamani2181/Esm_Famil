@@ -33,7 +33,10 @@ public class Client {
                             new OutputStreamWriter(
                                     socket.getOutputStream())), true);
 
-            Thread thread = new Thread(new ServerMessageManagerCreatingGame(reader, clientFxCreateController));
+            ServerMessageManagerCreatingGame manager = new ServerMessageManagerCreatingGame(reader, clientFxCreateController);
+            clientFxCreateController.setMessageManager(manager);
+
+            Thread thread = new Thread(manager);
             thread.start();
 
         } catch (IOException e) {
@@ -85,8 +88,9 @@ public class Client {
         }
     }
 
-    public void joinGame(int gameId) {
+    public void joinGame(int gameId, String playerName) {
         writer.println("JOIN GAME");
         writer.println(gameId);
+        writer.println(playerName);
     }
 }
