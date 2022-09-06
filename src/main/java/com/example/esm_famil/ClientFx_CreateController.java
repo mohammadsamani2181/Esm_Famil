@@ -2,6 +2,7 @@ package com.example.esm_famil;
 
 import com.example.esm_famil.network.Client;
 import com.example.esm_famil.model.Game;
+import com.example.esm_famil.network.ServerMessageManagerCreatingGame;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
@@ -22,6 +23,8 @@ import java.util.ArrayList;
 
 public class ClientFx_CreateController {
 
+
+    private ServerMessageManagerCreatingGame messageManager;
 
     private Client client;
 
@@ -98,6 +101,11 @@ public class ClientFx_CreateController {
         createPageCreateBtn.setOnAction(e -> {
             checkingFields();
         });
+    }
+
+
+    public void setMessageManager(ServerMessageManagerCreatingGame messageManager) {
+        this.messageManager = messageManager;
     }
 
     private void addToTheArrayList() {
@@ -191,7 +199,8 @@ public class ClientFx_CreateController {
         WaitingHostPageController waitingHostPageController = loader.getController();
         waitingHostPageController.setClient(client);
         waitingHostPageController.setGame(game);
-
+        waitingHostPageController.setMessageManager(messageManager);
+        messageManager.setWaitingController(waitingHostPageController);
 
         Platform.runLater(() -> {
             createPageCreateBtn.getScene().getWindow().hide();
