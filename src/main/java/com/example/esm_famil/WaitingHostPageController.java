@@ -28,6 +28,14 @@ public class WaitingHostPageController {
     @FXML
     void initialize() {
         waitingHostPageListView.setItems(playerList);
+
+        waitingHostPageStartBtn.setOnAction(e -> {
+            gamePlayerIsEnough ();
+        });
+    }
+
+    private void gamePlayerIsEnough() {
+        client.playerIsEnough(game.getId());
     }
 
     public void setMessageManager(ServerMessageManagerCreatingGame messageManager) {
