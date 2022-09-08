@@ -63,6 +63,20 @@ public class ClientManager implements Runnable {
                     }
                 }
 
+                else if (message.equals("CHECK FOR JOIN")) {
+                    int gameId = scan.nextInt();
+
+                    boolean isEnoughPlayer = server.checkGamePlayersForJoin(gameId);
+
+                    writer.println("IS PLAYER ENOUGH");
+                    writer.println(isEnoughPlayer);
+                }
+
+                else if (message.equals("PLAYER IS ENOUGH")) {
+                    int gameId = scan.nextInt();
+                    server.playerIsEnough(gameId);
+                }
+
                 else if (message.equals("JOIN GAME")) {
                     int gameId = scan.nextInt();
                     scan.nextLine();
