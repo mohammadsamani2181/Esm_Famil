@@ -14,6 +14,7 @@ public class Game {
     private String groupName;
     private Timestamp dateCreated;
     private int numberOfRound;
+    private boolean isEnoughPlayer = false;
     private ObservableList<String> fields = FXCollections.observableArrayList();
 
     public Game(String password, String hostName, String groupName) {
@@ -77,6 +78,14 @@ public class Game {
 
     public void setNumberOfRound(int numberOfRound) {
         this.numberOfRound = numberOfRound;
+    }
+
+    public boolean isEnoughPlayer() {
+        return isEnoughPlayer;
+    }
+
+    public void setEnoughPlayer(boolean enoughPlayer) {
+        isEnoughPlayer = enoughPlayer;
     }
 
     public void addField (String text) {
