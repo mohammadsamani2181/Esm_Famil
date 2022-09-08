@@ -33,6 +33,11 @@ public class ServerMessageManagerJoiningGame implements Runnable{
 
                 cellController.setGameFields(fields);
             }
+
+            else if (message.equals("IS PLAYER ENOUGH")) {
+                boolean isPlayerEnough = scan.nextBoolean();
+                cellController.setGamePlayerEnough(isPlayerEnough);
+            }
         }
     }
 }
