@@ -6,7 +6,6 @@ import javafx.collections.ObservableList;
 
 import java.io.*;
 import java.net.Socket;
-import java.util.ArrayList;
 
 public class Client {
     private Socket socket;
@@ -86,6 +85,16 @@ public class Client {
         for (int i = 0; i < texts.size(); i++) {
             writer.println(texts.get(i));
         }
+    }
+
+    public void checkGamePlayersForJoin (int gameId) {
+        writer.println("CHECK FOR JOIN");
+        writer.println(gameId);
+    }
+
+    public void playerIsEnough(int gameId) {
+        writer.println("PLAYER IS ENOUGH");
+        writer.println(gameId);
     }
 
     public void joinGame(int gameId, String playerName) {
