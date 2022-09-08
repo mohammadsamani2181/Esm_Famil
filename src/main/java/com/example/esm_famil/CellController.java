@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.layout.AnchorPane;
@@ -22,6 +23,8 @@ public class CellController extends ListCell<Game> {
     private FXMLLoader loader;
 
     private Client client;
+
+    private boolean isGamePlayerEnough = false;
 
     @FXML
     private AnchorPane cellPane;
@@ -72,7 +75,26 @@ public class CellController extends ListCell<Game> {
             setGraphic(cellPane);
 
             cellJoinBtn.setOnAction(e -> {
-                showAndControlIdentifyPage(game.getPassword());
+                client = new Client(this);
+                client.checkGamePlayersForJoin(game.getId());
+
+                // wait for checking player
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+
+                if (!isGamePlayerEnough) {
+                    showAndControlIdentifyPage(game.getPassword());
+
+                }else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setContentText("! You can't join in this game");
+                    alert.show();
+
+                    getListView().getItems().remove(getItem());
+                }
             });
         }
     }
@@ -88,7 +110,7 @@ public class CellController extends ListCell<Game> {
         }
 
         IdentifyPageController identifyController = loader.getController();
-        Label errorLbl = identifyController.getIdentifyPageErrorLbl();
+        Label identifyPageErrorLbl = identifyController.getIdentifyPageErrorLbl();
 
         identifyController.getIdentifyPageOkBtn().setOnAction(e -> {
             String playerName = identifyController.getIdentifyPagePlayerNameFld().getText();
@@ -98,18 +120,20 @@ public class CellController extends ListCell<Game> {
             if (!playerName.equals("") && !password.equals("")) {
 
                 if (password.equals(gamePassword)) {
-                    client = new Client(this);
                     client.joinGame(getItem().getId(), playerName);
+
+                    getListView().getScene().getWindow().hide();
+                    identifyPageErrorLbl.getScene().getWindow().hide();
 
                     showWaitingGuestPage();
                 }else {
-                    errorLbl.setText("Game Password is incorrect.");
-                    makeInvisible(errorLbl);
+                    identifyPageErrorLbl.setText("Game Password is incorrect.");
+                    makeInvisible(identifyPageErrorLbl);
                 }
 
             }else {
-                errorLbl.setText("You must enter your name and Game Password.");
-                makeInvisible(errorLbl);
+                identifyPageErrorLbl.setText("You must enter your name and Game Password.");
+                makeInvisible(identifyPageErrorLbl);
             }
         });
 
@@ -170,4 +194,8 @@ public class CellController extends ListCell<Game> {
         stage.show();
     }
 
+
+    public void setGamePlayerEnough(boolean gamePlayerEnough) {
+        isGamePlayerEnough = gamePlayerEnough;
+    }
 }
