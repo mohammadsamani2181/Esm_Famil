@@ -71,4 +71,16 @@ public class Server {
     public ObservableList<String> getGameFields (int gameId) {
         return games.get(gameId).getFields();
     }
+
+    public void playerIsEnough (int gameId) {
+        games.get(gameId).setEnoughPlayer(true);
+    }
+
+    public boolean checkGamePlayersForJoin (int gameId) {
+        if (games.get(gameId).isEnoughPlayer()) {
+            return true;
+        }
+
+        return false;
+    }
 }
