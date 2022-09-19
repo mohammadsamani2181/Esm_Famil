@@ -72,4 +72,12 @@ public class WaitingHostPageController {
     public void addNewPlayerName (String playerName) {
         playerList.add(playerName);
     }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public Game getGame() {
+        return game;
+    }
 }
