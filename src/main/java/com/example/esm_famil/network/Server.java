@@ -78,6 +78,7 @@ public class Server {
 
     public void playerIsEnough (int gameId) {
         games.get(gameId).setEnoughPlayer(true);
+        dbHandler.deleteGame(gameId);
     }
 
     public boolean checkGamePlayersForJoin (int gameId) {
