@@ -202,6 +202,9 @@ public class CellController extends ListCell<Game> {
         stage.show();
     }
 
+    public AnchorPane changeWaitingPagePane(AnchorPane newPane) {
+        return waitingPageController.changePane(newPane);
+    }
 
     public void setGamePlayerEnough(boolean gamePlayerEnough) {
         isGamePlayerEnough = gamePlayerEnough;
