@@ -66,4 +66,22 @@ public class DBHandler extends Configs{
 
         return resultSet;
     }
+
+    public void deleteGame (int gameId) {
+        String query = "DELETE FROM " + Const.GAMES_TABLE +
+                " WHERE " + Const.GAMES_ID + "=?";
+
+        try {
+            PreparedStatement preparedStatement = getDbConnection().prepareStatement(query);
+
+            preparedStatement.setInt(1, gameId);
+            preparedStatement.execute();
+            preparedStatement.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }
