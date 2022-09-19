@@ -61,4 +61,8 @@ public class ServerMessageManagerCreatingGame implements Runnable{
     public void setWaitingController(WaitingHostPageController waitingController) {
         this.waitingController = waitingController;
     }
+
+    public AnchorPane changePane(AnchorPane newPane) {
+        return waitingController.changePane(newPane);
+    }
 }
