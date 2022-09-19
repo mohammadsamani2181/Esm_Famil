@@ -88,4 +88,16 @@ public class Server {
 
         return false;
     }
+
+    public void sendStartMessageToGameClients(int gameId) {
+        for (ClientManager clientManager : clientManagers.get(gameId)) {
+            clientManager.sendStartMessage();
+        }
+    }
+
+    public void sendGameLetterToGameClients(int gameId, String letter) {
+        for (ClientManager clientManager : clientManagers.get(gameId)) {
+            clientManager.sendLetter(letter);
+        }
+    }
 }
