@@ -72,6 +72,10 @@ public class Server {
         return games.get(gameId).getFields();
     }
 
+    public int getGameNumberOfRound (int gameId) {
+        return games.get(gameId).getNumberOfRound();
+    }
+
     public void playerIsEnough (int gameId) {
         games.get(gameId).setEnoughPlayer(true);
     }
