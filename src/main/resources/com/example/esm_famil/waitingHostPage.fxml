@@ -7,15 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="403.0" prefWidth="392.0" style="-fx-background-color: #4d82cb;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esm_famil.WaitingHostPageController">
+<AnchorPane fx:id="waitingHostPagePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #4d82cb;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esm_famil.WaitingHostPageController">
    <children>
-      <AnchorPane layoutX="22.0" layoutY="20.0" prefHeight="364.0" prefWidth="347.0" style="-fx-background-color: #b6e3ff;">
+      <AnchorPane layoutX="19.0" layoutY="18.0" prefHeight="364.0" prefWidth="562.0" style="-fx-background-color: #b6e3ff;">
          <effect>
             <DropShadow />
          </effect>
          <children>
-            <MFXLegacyListView fx:id="waitingHostPageListView" layoutX="22.0" layoutY="85.0" prefHeight="146.0" prefWidth="303.0">
+            <MFXLegacyListView fx:id="waitingHostPageListView" layoutX="22.0" layoutY="85.0" prefHeight="169.0" prefWidth="522.0">
                <effect>
                   <DropShadow />
                </effect>
@@ -25,7 +24,7 @@
                   <Font name="System Italic" size="15.0" />
                </font>
             </Label>
-            <MFXButton fx:id="waitingHostPageStartBtn" buttonType="RAISED" depthLevel="LEVEL5" layoutX="64.0" layoutY="279.0" prefHeight="42.0" prefWidth="220.0" rippleColor="#2709cf" style="-fx-background-color: #2962ff;" text="Start" textFill="WHITE">
+            <MFXButton fx:id="waitingHostPageStartBtn" buttonType="RAISED" depthLevel="LEVEL5" layoutX="324.0" layoutY="282.0" prefHeight="42.0" prefWidth="220.0" rippleColor="#2709cf" style="-fx-background-color: #2962ff;" text="Start" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
