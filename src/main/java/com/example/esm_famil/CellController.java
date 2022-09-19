@@ -26,6 +26,10 @@ public class CellController extends ListCell<Game> {
 
     private boolean isGamePlayerEnough = false;
 
+    private ServerMessageManagerJoiningGame messageManager;
+
+    private WaitingGuestPageController waitingPageController;
+
     @FXML
     private AnchorPane cellPane;
 
@@ -201,5 +205,25 @@ public class CellController extends ListCell<Game> {
 
     public void setGamePlayerEnough(boolean gamePlayerEnough) {
         isGamePlayerEnough = gamePlayerEnough;
+    }
+
+    public ServerMessageManagerJoiningGame getMessageManager() {
+        return messageManager;
+    }
+
+    public void setMessageManager(ServerMessageManagerJoiningGame messageManager) {
+        this.messageManager = messageManager;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public Game getGame() {
+        return getItem();
+    }
+
+    public WaitingGuestPageController getWaitingPageController() {
+        return waitingPageController;
     }
 }
