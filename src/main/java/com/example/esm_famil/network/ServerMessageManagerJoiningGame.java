@@ -4,6 +4,7 @@ import com.example.esm_famil.CellController;
 import com.example.esm_famil.StartGame;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.BufferedReader;
 import java.util.Scanner;
@@ -59,3 +60,9 @@ public class ServerMessageManagerJoiningGame implements Runnable{
             }
         }
     }
+
+    public AnchorPane changePane (AnchorPane pane) {
+        return cellController.changeWaitingPagePane(pane);
+    }
+
+}
