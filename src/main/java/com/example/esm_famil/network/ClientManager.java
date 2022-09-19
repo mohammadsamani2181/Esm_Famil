@@ -91,6 +91,24 @@ public class ClientManager implements Runnable {
                     for (String field : fields) {
                         writer.println(field);
                     }
+
+                    int numberOfRound = server.getGameNumberOfRound(gameId);
+                    writer.println("NUMBER OF ROUND");
+                    writer.println(numberOfRound);
+                }
+
+                else if (message.equals("START")) {
+                    int gameId = scan.nextInt();
+                    server.sendStartMessageToGameClients(gameId);
+                }
+
+                else if (message.equals("GAME LETTER")) {
+                    int gameId = scan.nextInt();
+                    scan.nextLine();
+
+                    String letter = scan.nextLine();
+
+                    server.sendLetterGameToGameClients(gameId, letter);
                 }
             }
 
@@ -105,4 +123,14 @@ public class ClientManager implements Runnable {
         writer.println("PLAYER JOINED");
         writer.println(clientManager.name);
     }
+
+    public void sendStartMessage () {
+        writer.println("START");
+    }
+
+    public void sendLetter(String letter) {
+        writer.println("LETTER");
+        writer.println(letter);
+    }
+
 }
