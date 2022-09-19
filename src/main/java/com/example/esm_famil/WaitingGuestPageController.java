@@ -22,4 +22,27 @@ public class WaitingGuestPageController {
     void initialize() {
 
     }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public ServerMessageManagerJoiningGame getMessageManager() {
+        return messageManager;
+    }
+
+    public void setMessageManager(ServerMessageManagerJoiningGame messageManager) {
+        this.messageManager = messageManager;
+    }
+
+    public AnchorPane changePane(AnchorPane newPane) {
+        Platform.runLater(() -> {
+            this.waitingGuestPagePane.getChildren().setAll(newPane);
+        });
+        return waitingGuestPagePane;
+    }
 }
