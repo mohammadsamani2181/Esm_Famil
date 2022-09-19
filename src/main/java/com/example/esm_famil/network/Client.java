@@ -63,7 +63,10 @@ public class Client {
                             new OutputStreamWriter(
                                     socket.getOutputStream())), true);
 
-            Thread thread = new Thread(new ServerMessageManagerJoiningGame(reader, cellController));
+            ServerMessageManagerJoiningGame messageManager = new ServerMessageManagerJoiningGame(reader, cellController);
+            cellController.setMessageManager(messageManager);
+
+            Thread thread = new Thread(messageManager);
             thread.start();
 
         } catch (IOException e) {
