@@ -8,6 +8,7 @@ import io.github.palexdev.materialfx.controls.legacy.MFXLegacyListView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.layout.AnchorPane;
 
 public class WaitingHostPageController {
 
@@ -24,6 +25,9 @@ public class WaitingHostPageController {
 
     @FXML
     private MFXButton waitingHostPageStartBtn;
+
+    @FXML
+    private AnchorPane waitingHostPagePane;
 
     @FXML
     void initialize() {
