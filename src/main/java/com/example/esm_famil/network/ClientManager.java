@@ -108,7 +108,7 @@ public class ClientManager implements Runnable {
 
                     String letter = scan.nextLine();
 
-                    server.sendLetterGameToGameClients(gameId, letter);
+                    server.sendGameLetterToGameClients(gameId, letter);
                 }
             }
 
