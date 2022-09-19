@@ -2,6 +2,7 @@ package com.example.esm_famil;
 
 import com.example.esm_famil.model.Game;
 import com.example.esm_famil.network.Client;
+import com.example.esm_famil.network.ServerMessageManagerJoiningGame;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.animation.PauseTransition;
 import javafx.collections.ObservableList;
