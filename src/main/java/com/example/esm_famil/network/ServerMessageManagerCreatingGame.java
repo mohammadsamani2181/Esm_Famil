@@ -1,6 +1,7 @@
 package com.example.esm_famil.network;
 
 import com.example.esm_famil.ClientFx_CreateController;
+import com.example.esm_famil.StartGame;
 import com.example.esm_famil.WaitingHostPageController;
 import com.example.esm_famil.model.Game;
 
@@ -11,6 +12,7 @@ public class ServerMessageManagerCreatingGame implements Runnable{
     private Scanner scan;
     private ClientFx_CreateController clientFx;
     private WaitingHostPageController waitingController;
+    private StartGame startGame;
 
     public ServerMessageManagerCreatingGame(BufferedReader reader,
                                             ClientFx_CreateController clientFx) {
