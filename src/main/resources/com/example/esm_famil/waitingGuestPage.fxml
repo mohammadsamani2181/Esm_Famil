@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="waitingGuestPagePane" prefHeight="400.0" prefWidth="450.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esm_famil.WaitingGuestPageController">
+<AnchorPane fx:id="waitingGuestPagePane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esm_famil.WaitingGuestPageController">
    <children>
-      <ImageView fitHeight="261.0" fitWidth="450.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="339.0" fitWidth="660.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/mr-bean-waiting.gif" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="51.0" layoutY="307.0" prefHeight="38.0" prefWidth="349.0" text="We should wait for other players :(" textFill="#f20303">
+      <Label alignment="CENTER" layoutX="125.0" layoutY="347.0" prefHeight="38.0" prefWidth="349.0" text="We should wait for other players :(" textFill="#f20303">
          <font>
             <Font size="18.0" />
          </font>
