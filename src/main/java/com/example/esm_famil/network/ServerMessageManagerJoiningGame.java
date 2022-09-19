@@ -45,6 +45,17 @@ public class ServerMessageManagerJoiningGame implements Runnable{
                 boolean isPlayerEnough = scan.nextBoolean();
                 cellController.setGamePlayerEnough(isPlayerEnough);
             }
+
+            else if (message.equals("START")) {
+                startGame = new StartGame(cellController.getClient(), cellController.getGame());
+                startGame.setMessageManagerJoiningGame(this);
+                startGame.start();
+            }
+
+            else if (message.equals("LETTER")) {
+                String letter = scan.nextLine();
+                startGame.setGameLetter(letter);
+                startGame.loadGamePage();
+            }
         }
     }
-}
