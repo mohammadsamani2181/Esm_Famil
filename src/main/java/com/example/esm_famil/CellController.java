@@ -179,6 +179,10 @@ public class CellController extends ListCell<Game> {
         System.out.println(getItem().getFields());
     }
 
+    public void setGameNumberOfRound (int numberOfRound) {
+        getItem().setNumberOfRound(numberOfRound);
+    }
+
     private void showWaitingGuestPage() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("waitingGuestPage.fxml"));
 
