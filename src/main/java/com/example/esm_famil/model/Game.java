@@ -4,7 +4,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
 
 public class Game {
     private static int idNumber = 0;
@@ -15,6 +14,7 @@ public class Game {
     private Timestamp dateCreated;
     private int numberOfRound;
     private boolean isEnoughPlayer = false;
+    private String gameLetter;
     private ObservableList<String> fields = FXCollections.observableArrayList();
 
     public Game(String password, String hostName, String groupName) {
@@ -78,6 +78,14 @@ public class Game {
 
     public void setNumberOfRound(int numberOfRound) {
         this.numberOfRound = numberOfRound;
+    }
+
+    public void setGameLetter(String gameLetter) {
+        this.gameLetter = gameLetter;
+    }
+
+    public String getGameLetter() {
+        return gameLetter;
     }
 
     public boolean isEnoughPlayer() {
