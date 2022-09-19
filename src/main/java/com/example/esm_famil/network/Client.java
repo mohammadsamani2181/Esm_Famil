@@ -112,4 +112,15 @@ public class Client {
         writer.println(gameId);
         writer.println(playerName);
     }
+
+    public void startGame(int gameId) {
+        writer.println("START");
+        writer.println(gameId);
+    }
+
+    public void sendAlphabetLetter(int gameId, String letter) {
+        writer.println("GAME LETTER");
+        writer.println(gameId);
+        writer.println(letter);
+    }
 }
