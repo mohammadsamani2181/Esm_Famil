@@ -1,6 +1,7 @@
 package com.example.esm_famil.network;
 
 import com.example.esm_famil.CellController;
+import com.example.esm_famil.StartGame;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -10,6 +11,7 @@ import java.util.Scanner;
 public class ServerMessageManagerJoiningGame implements Runnable{
     private Scanner scan;
     private CellController cellController;
+    private StartGame startGame;
 
     public ServerMessageManagerJoiningGame(BufferedReader reader, CellController cellController) {
         scan = new Scanner(reader);
