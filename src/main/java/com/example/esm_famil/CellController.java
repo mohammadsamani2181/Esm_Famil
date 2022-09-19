@@ -196,6 +196,11 @@ public class CellController extends ListCell<Game> {
             e.printStackTrace();
         }
 
+        waitingPageController = loader.getController();
+        waitingPageController.setClient(client);
+        waitingPageController.setGame(getItem());
+        waitingPageController.setMessageManager(messageManager);
+
         Stage stage = new Stage();
         Parent root = loader.getRoot();
         stage.setScene(new Scene(root));
