@@ -35,7 +35,13 @@ public class WaitingHostPageController {
 
         waitingHostPageStartBtn.setOnAction(e -> {
             gamePlayerIsEnough ();
+
+            startGame();
         });
+    }
+
+    private void startGame() {
+        client.startGame(game.getId());
     }
 
     private void gamePlayerIsEnough() {
