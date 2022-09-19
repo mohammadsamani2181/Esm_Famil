@@ -36,6 +36,11 @@ public class ServerMessageManagerJoiningGame implements Runnable{
                 cellController.setGameFields(fields);
             }
 
+            else if (message.equals("NUMBER OF ROUND")) {
+                int numberOfRound = scan.nextInt();
+                cellController.setGameNumberOfRound(numberOfRound);
+            }
+
             else if (message.equals("IS PLAYER ENOUGH")) {
                 boolean isPlayerEnough = scan.nextBoolean();
                 cellController.setGamePlayerEnough(isPlayerEnough);
