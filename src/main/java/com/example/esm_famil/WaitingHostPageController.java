@@ -5,6 +5,7 @@ import com.example.esm_famil.network.Client;
 import com.example.esm_famil.network.ServerMessageManagerCreatingGame;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.legacy.MFXLegacyListView;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -46,6 +47,14 @@ public class WaitingHostPageController {
 
     private void gamePlayerIsEnough() {
         client.playerIsEnough(game.getId());
+    }
+
+    public AnchorPane changePane(AnchorPane newPane) {
+        Platform.runLater(() -> {
+            this.waitingHostPagePane.getChildren().setAll(newPane);
+        });
+
+        return this.waitingHostPagePane;
     }
 
     public void setMessageManager(ServerMessageManagerCreatingGame messageManager) {
