@@ -15,9 +15,11 @@ public class Client {
     private PrintWriter writer;
     private ClientFx_CreateController clientFxCreateController;
     private CellController cellController;
+    private boolean isHost;
 
     public Client (ClientFx_CreateController clientFxCreateController) {
         this.clientFxCreateController = clientFxCreateController;
+        this.isHost = true;
 
         try {
             socket = new Socket(serverAddress, port);
@@ -46,6 +48,8 @@ public class Client {
 
     public Client (CellController cellController) {
         this.cellController = cellController;
+        this.isHost = false;
+
         try {
             socket = new Socket(serverAddress, port);
 
@@ -68,6 +72,9 @@ public class Client {
     }
 
 
+    public boolean isHost() {
+        return isHost;
+    }
 
     public void createGame (String password, String hostName, String groupName, String numberOfRound) {
         writer.println("CREATE NEW GAME");
