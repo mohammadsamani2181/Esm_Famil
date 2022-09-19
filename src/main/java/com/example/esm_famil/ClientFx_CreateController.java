@@ -169,11 +169,12 @@ public class ClientFx_CreateController {
         String password = createPagePasswordFld.getText();
         String hostName = createPageHostNameFld.getText();
         String groupName = createPageGroupNameFld.getText();
+        int numberOfRound = Integer.parseInt(createPageNumberOfRound.getValue());
 
         game.setPassword(password);
         game.setHostName(hostName);
         game.setGroupName(groupName);
-
+        game.setNumberOfRound(numberOfRound);
         game.addField(selectedCheckBoxesText);
 
         client.sendGameFields(selectedCheckBoxesText, game.getId());
