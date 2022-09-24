@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #4d82cb;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esm_famil.ChooseAlphabetLetterController">
+   <children>
+      <Label alignment="CENTER" layoutX="149.0" layoutY="100.0" prefHeight="34.0" prefWidth="302.0" text="Please enter the alphabet letter of the game" textFill="#d2b1b1">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Label>
+      <MFXTextField fx:id="chooseAlphabetTxtFld" layoutX="188.0" layoutY="189.0" minHeight="-Infinity" prefHeight="46.0" prefWidth="223.0" promptText="Alphabet letter">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </MFXTextField>
+      <MFXButton fx:id="chooseAlphabetStartBtn" buttonType="RAISED" depthLevel="LEVEL5" layoutX="238.0" layoutY="299.0" prefHeight="34.0" prefWidth="123.0" style="-fx-background-color: #6200ea;" text="Start" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </MFXButton>
+   </children>
+</AnchorPane>
