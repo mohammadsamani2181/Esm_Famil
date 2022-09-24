@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #4d82cb;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esm_famil.WaitingForChoosingAlphabetLetterController">
+   <children>
+      <Label layoutX="109.0" layoutY="184.0" prefHeight="32.0" prefWidth="381.0" text="Your friend is choosing the game letter so please wait :)" textFill="#d5bdbd">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
