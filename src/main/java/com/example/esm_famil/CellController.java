@@ -62,13 +62,15 @@ public class CellController extends ListCell<Game> {
             setText(null);
             setGraphic(null);
         }else {
-            loader = new FXMLLoader(getClass().getResource("cell.fxml"));
-            loader.setController(this);
+            if (loader == null) {
+                loader = new FXMLLoader(getClass().getResource("cell.fxml"));
+                loader.setController(this);
 
-            try {
-                loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
+                try {
+                    loader.load();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
 
             cellHostName.setText(game.getHostName());
