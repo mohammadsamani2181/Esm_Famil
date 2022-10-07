@@ -59,7 +59,7 @@ public class ChooseAlphabetLetterController {
             e.printStackTrace();
         }
         GamePageController controller = loader.getController();
-        controller.setShowGamePage(startGame);
+        controller.setStartGame(startGame);
         controller.showCells();
 
         startGame.getPane().getChildren().setAll((Node) loader.getRoot());
