@@ -3,9 +3,8 @@
 <?import io.github.palexdev.materialfx.controls.legacy.MFXLegacyListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esm_famil.GamePageController">
+<AnchorPane prefHeight="589.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esm_famil.GamePageController">
    <children>
-      <MFXLegacyListView fx:id="gamePageListView" layoutX="9.0" layoutY="46.0" prefHeight="350.0" prefWidth="582.0" />
+      <MFXLegacyListView fx:id="gamePageListView" layoutX="10.0" layoutY="5.0" prefHeight="579.0" prefWidth="579.0" />
    </children>
 </AnchorPane>
