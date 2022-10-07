@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="waitingHostPagePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #4d82cb;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esm_famil.WaitingHostPageController">
+<AnchorPane fx:id="waitingHostPagePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="600.0" style="-fx-background-color: #4d82cb;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.esm_famil.WaitingHostPageController">
    <children>
-      <AnchorPane layoutX="19.0" layoutY="18.0" prefHeight="364.0" prefWidth="562.0" style="-fx-background-color: #b6e3ff;">
+      <AnchorPane layoutX="19.0" layoutY="63.0" prefHeight="462.0" prefWidth="562.0" style="-fx-background-color: #b6e3ff;">
          <effect>
             <DropShadow />
          </effect>
