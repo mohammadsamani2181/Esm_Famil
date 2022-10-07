@@ -91,9 +91,8 @@ public class StartGame {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        GamePageController controller;
-        controller = loader.getController();
-        controller.setShowGamePage(this);
+        GamePageController controller = loader.getController();
+        controller.setStartGame(this);
         controller.showCells();
 
         Platform.runLater(() -> {
